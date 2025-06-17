@@ -1,38 +1,69 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
+title: "[BUG]"
+labels: bug
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+# **🐞 Bug Report**
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+<!-- Describe the bug -->
+<!-- A clear and concise description of what the bug is. -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+*
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+### **Is this a regression?**
+<!-- Did this behaviour used to work in the previous version? -->
+<!-- Yes, the last version in which this bug was not present was: ... -->
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+### **To Reproduce**
 
-**Additional context**
-Add any other context about the problem here.
+<!-- Steps to reproduce the error:
+(e.g.:)
+1. Use x argument / navigate to
+2. Fill this information
+3. Go to...
+4. See error -->
+
+<!-- Write the steps here (add or remove as many steps as needed)-->
+
+1.
+2.
+3.
+4.
+
+
+### **Expected behaviour**
+<!-- A clear and concise description of what you expected to happen. -->
+
+*
+
+
+### **Media prove**
+<!-- If applicable, add screenshots or videos to help explain your problem. -->
+
+
+### **Your environment**
+
+<!-- use all the applicable bulleted list elements for this specific issue,
+and remove all the bulleted list elements that are not relevant for this issue. -->
+
+* OS: <!--[e.g. Ubuntu 5.4.0-26-generic x86_64 / Windows 1904 ...]-->
+* Browser name and version:
+
+
+## **💡 Additional context**
+<!-- Add any other context or additional information about the problem here.-->
+
+*
+
+
+<!--📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛
+
+Oh, hi there! 😄
+To expedite issue processing, please search open and closed issues before submitting a new one.
+
+📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛📛-->
