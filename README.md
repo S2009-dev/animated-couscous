@@ -1,18 +1,18 @@
-# animated-couscous
+# :video_game: animated-couscous
 
 GitHub had suggested the name of this repo. (We'll change it when we'll have the game's name)
 
-## Overview
+## :book: Overview
 
 This project is a 2D multiplayer game made with Godot Engine, by [S2009](https://github.com/S2009-dev) and members of the [Zenika's Lyon team](https://www.zenika.com/agency/lyon).  
 The game must be eco-friendly and accessible to everyone. We'll try to make a MVP in two weeks.
 This game is for educational purposes.
 
-## Goal
+## :goal_net: Goal
 
 In this game, the players are human beings in a recycling factory. They must sort the waste in order to save the planet. They **must** play together.
 
-## Features
+## :computer: Features
 
 - Multiplayer (only local/split screen)
 - Top-down view
@@ -28,7 +28,7 @@ In this game, the players are human beings in a recycling factory. They must sor
 - English only (for now)
 - Other features to be defined
 
-## Eco-conception
+## :leaves: Eco-conception
 
 This game is eco-friendly. What does it mean ?
 
