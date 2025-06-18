@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dotksh76hv8lr"]
+
+[ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/players/player_1.tscn" id="1_ttg0s"]
+[ext_resource type="PackedScene" uid="uid://bxth0c6que8bp" path="res://objects/entities/players/player_2.tscn" id="2_ym7i4"]
+
+[node name="Players" type="Node2D"]
+
+[node name="Player1" parent="." instance=ExtResource("1_ttg0s")]
+
+[node name="Player2" parent="." instance=ExtResource("2_ym7i4")]
+visible = false
