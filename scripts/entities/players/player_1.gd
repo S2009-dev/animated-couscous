@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 400 # Player's Speed (px/s)
 var screen_size
@@ -8,8 +8,8 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO # Player's movement vector
+func _physics_process(_delta: float) -> void:
+	velocity = Vector2.ZERO
 
 	if Input.is_action_pressed("player1_up"):
 		velocity.y -= 1
@@ -24,6 +24,5 @@ func _process(delta: float) -> void:
 		velocity = velocity.normalized() * speed
 		$Sprite2D.rotation = atan2(velocity.y, velocity.x) + 90 * PI / 180
 	
-	position += velocity * delta
+	move_and_slide()
 	position = position.clamp(Vector2.ZERO, screen_size)
-	
