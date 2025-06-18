@@ -1,14 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6khkw216qi8f"]
+[gd_scene load_steps=3 format=3 uid="uid://b6khkw216qi8f"]
 
-[ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/players/player_1.tscn" id="1_ttg0s"]
-[ext_resource type="Script" path="res://scripts/scenes/players.gd" id="1_ym7i4"]
-[ext_resource type="PackedScene" uid="uid://bxth0c6que8bp" path="res://objects/entities/players/player_2.tscn" id="2_ym7i4"]
+[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/players.gd" id="1_ym7i4"]
+[ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_ttg0s"]
 
 [node name="Players" type="Node2D"]
 script = ExtResource("1_ym7i4")
-player1_start_pos = Vector2(416, 270)
-player2_start_pos = Vector2(544, 270)
-
-[node name="Player1" parent="." instance=ExtResource("1_ttg0s")]
-
-[node name="Player2" parent="." instance=ExtResource("2_ym7i4")]
+player_object = ExtResource("2_ttg0s")
