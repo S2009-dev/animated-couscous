@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed: float = 400 # Player's Speed (px/s)
 
 var screen_size: Vector2
-var player_name: String = "player" + str(id)
+var player_name: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
