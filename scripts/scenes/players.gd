@@ -6,7 +6,7 @@ func _ready() -> void:
 	create_player()
 	create_player(2)
 
-func create_player(id: int = 1) -> void:
+func create_player(id: int) -> void:
 	var player = player_object.instantiate()
 
 	player.id = id
