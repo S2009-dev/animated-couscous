@@ -10,6 +10,6 @@ func create_player(id: int) -> void:
 	var player = player_object.instantiate()
 
 	player.id = id
-	player.position = Vector2(100, 100) if id == 1 else Vector2(700, 100)
+	player.position = position
 
 	add_child(player)
