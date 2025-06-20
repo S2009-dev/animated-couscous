@@ -1,11 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6khkw216qi8f"]
+[gd_scene load_steps=7 format=3 uid="uid://b6khkw216qi8f"]
 
-[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/world.gd" id="1_l21g3"]
+[ext_resource type="Script" path="res://scripts/scenes/world.gd" id="1_l21g3"]
 [ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_vn3je"]
 [ext_resource type="PackedScene" uid="uid://dhqxr0whi4kf2" path="res://objects/entities/conveyor.tscn" id="3_vn3je"]
+[ext_resource type="Script" uid="uid://dqrlsqsc233yg" path="res://scripts/scenes/camera_controller.gd" id="4_1mux5"]
+[ext_resource type="Shader" uid="uid://dwq7aopgdg2ss" path="res://assets/shaders/split_screen.gdshader" id="5_71dq4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oll44"]
+shader = ExtResource("5_71dq4")
+shader_parameter/viewport_size = Vector2(0, 0)
+shader_parameter/split_active = false
+shader_parameter/player1_position = Vector2(0, 0)
+shader_parameter/player2_position = Vector2(0, 0)
+shader_parameter/split_line_thickness = 0.0
+shader_parameter/split_line_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_l21g3")
 player_object = ExtResource("2_vn3je")
 
 [node name="Conveyor" parent="." instance=ExtResource("3_vn3je")]
+
+[node name="Cameras" type="Node2D" parent="."]
+script = ExtResource("4_1mux5")
+
+[node name="View" type="TextureRect" parent="Cameras"]
+material = SubResource("ShaderMaterial_oll44")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Viewport1" type="SubViewport" parent="Cameras"]
+
+[node name="Camera1" type="Camera2D" parent="Cameras/Viewport1"]
+
+[node name="Viewport2" type="SubViewport" parent="Cameras"]
+
+[node name="Camera2" type="Camera2D" parent="Cameras/Viewport2"]
