@@ -1,7 +1,6 @@
 extends TileMapLayer
 
 @export var item_object: PackedScene # Items scene
-@export var items_name: PackedStringArray # What items this conveyor carries (not implemented yet)
 @export var speed: int = 8
 
 func _process(delta: float) -> void:
