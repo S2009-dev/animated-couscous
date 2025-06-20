@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export_range(1, 2) var id: int = 1 # ID (only 1 or 2)
 @export var speed: float = 400 # Walking Speed (px/s)
+@export var interaction_range: float = 64 # Range of interaction (px)
 
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var label: Label = %Label
@@ -17,6 +18,9 @@ func _ready() -> void:
 	label.modulate = [Color(1, 0, 0), Color(0, 0, 1)][id - 1]
 	sprite.texture = load("res://assets/sprites/players/" + player_name + ".png")
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(player_name + "_interact"):
+		interact()
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
@@ -37,3 +41,15 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 	position = position.clamp(Vector2.ZERO, screen_size)
+
+func interact() -> void:
+	var items = get_tree().get_nodes_in_group("items")
+
+	for i in range(0, items.size()):
+		var item = items[i]
+		var distance = position.distance_to(item.position)
+
+		if distance < interaction_range:
+			item.queue_free()
+			get_tree().get_nodes_in_group("items_path")[i].queue_free()
+			break
