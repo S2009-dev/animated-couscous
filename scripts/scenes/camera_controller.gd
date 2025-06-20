@@ -24,8 +24,6 @@ extends Node2D
 @export var split_line_color: Color = Color.BLACK
 @export var adaptive_split_line_thickness: bool = true
 
-@onready var player1 = $"../Player1"
-@onready var player2 = $"../Player2"
 @onready var view = $View
 @onready var viewport1 = $Viewport1
 @onready var viewport2 = $Viewport2
@@ -33,8 +31,13 @@ extends Node2D
 @onready var camera2 = viewport2.get_node(^"Camera2")
 
 var viewport_base_height = ProjectSettings.get_setting("display/window/size/viewport_height")
+var player1: CharacterBody2D
+var player2: CharacterBody2D
 
-func _ready():
+func _on_world_loaded():
+	player1 = $"../Players".get_child(0)
+	player2 = $"../Players".get_child(1)
+
 	_on_size_changed()
 	_update_splitscreen()
 
@@ -67,7 +70,7 @@ func _update_splitscreen():
 	var screen_size = get_viewport().get_visible_rect().size
 	var player1_position = camera1.unproject_position(player1.position) / screen_size
 	var player2_position = camera2.unproject_position(player2.position) / screen_size
-
+	
 	var thickness
 	if adaptive_split_line_thickness:
 		var position_difference = _compute_position_difference_in_world()
