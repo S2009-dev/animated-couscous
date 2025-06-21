@@ -5,19 +5,20 @@ extends Control
 @export var split_line_color: Color = Color.BLACK
 @export var adaptive_split_line_thickness: bool = true
 
-@onready var view = $View
-@onready var viewport1 = $SubViewportContainer/Viewport1
-@onready var viewport2 = $SubViewportContainer2/Viewport2
-@onready var camera1 = viewport1.get_node("Camera1")
-@onready var camera2 = viewport2.get_node("Camera2")
+@onready var view: TextureRect = $View
+@onready var viewport1: SubViewport = %Viewport1
+@onready var viewport2: SubViewport = %Viewport2
+@onready var camera1: Camera2D = viewport1.get_node("Camera1")
+@onready var camera2: Camera2D = viewport2.get_node("Camera2")
+@onready var players: Node2D = %Players
 
 var viewport_base_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 var player1: CharacterBody2D
 var player2: CharacterBody2D
 
 func _on_world_loaded():
-	player1 = $SubViewportContainer/Viewport1/Players.get_child(0)
-	player2 = $SubViewportContainer/Viewport1/Players.get_child(1)
+	player1 = players.get_child(0)
+	player2 = players.get_child(1)
 	camera1.position = get_viewport().get_visible_rect().size / 2
 	camera2.position = get_viewport().get_visible_rect().size / 2
 	viewport2.world_2d = viewport1.world_2d
@@ -76,8 +77,8 @@ func _get_split_state():
 func _on_size_changed():
 	var screen_size = get_viewport().get_visible_rect().size
 
-	$SubViewportContainer.size = screen_size
-	$SubViewportContainer2.size = screen_size
+	$ViewportContainer1.size = screen_size
+	$ViewportContainer2.size = screen_size
 	viewport1.size = screen_size
 	viewport2.size = screen_size
 	view.size = screen_size

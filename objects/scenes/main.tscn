@@ -36,9 +36,9 @@ max_separation = 540.0
 layout_mode = 0
 offset_right = 960.0
 offset_bottom = 540.0
-stretch = true
 
 [node name="Viewport1" type="SubViewport" parent="Cameras/ViewportContainer1"]
+unique_name_in_owner = true
 disable_3d = true
 handle_input_locally = false
 size = Vector2i(960, 540)
@@ -49,6 +49,7 @@ render_target_update_mode = 4
 [node name="Conveyor" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("3_vn3je")]
 
 [node name="Players" type="Node2D" parent="Cameras/ViewportContainer1/Viewport1"]
+unique_name_in_owner = true
 
 [node name="ViewportContainer2" type="SubViewportContainer" parent="Cameras"]
 layout_mode = 0
@@ -56,6 +57,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 
 [node name="Viewport2" type="SubViewport" parent="Cameras/ViewportContainer2"]
+unique_name_in_owner = true
 disable_3d = true
 handle_input_locally = false
 size = Vector2i(960, 540)
