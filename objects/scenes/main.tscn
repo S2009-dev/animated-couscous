@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6khkw216qi8f"]
 
-[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/world.gd" id="1_l21g3"]
+[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/main.gd" id="1_l21g3"]
 [ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_vn3je"]
 [ext_resource type="PackedScene" uid="uid://dhqxr0whi4kf2" path="res://objects/entities/conveyor.tscn" id="3_vn3je"]
 [ext_resource type="Script" uid="uid://dqrlsqsc233yg" path="res://scripts/scenes/camera_controller.gd" id="4_1mux5"]
@@ -73,4 +73,4 @@ offset_bottom = 540.0
 texture = ExtResource("6_oll44")
 expand_mode = 1
 
-[connection signal="world_loaded" from="." to="Cameras" method="_on_world_loaded"]
+[connection signal="world_loaded" from="." to="Cameras" method="_on_main_world_loaded"]

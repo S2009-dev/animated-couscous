@@ -16,7 +16,7 @@ var viewport_base_height = ProjectSettings.get_setting("display/window/size/view
 var player1: CharacterBody2D
 var player2: CharacterBody2D
 
-func _on_world_loaded():
+func _on_main_world_loaded():
 	player1 = players.get_child(0)
 	player2 = players.get_child(1)
 	camera1.position = get_viewport().get_visible_rect().size / 2
