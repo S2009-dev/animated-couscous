@@ -22,6 +22,7 @@ func _on_item_spawn_interval_timeout() -> void:
 
     item.position = path_follow.position
     path_follow.loop = false
+    path_follow.add_to_group("items_path")
 
     $Items.add_child(item)
     $Path2D.add_child(path_follow)

@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ar2hn"]
 size = Vector2(16, 16)
 
-[node name="Item" type="Area2D"]
+[node name="Item" type="Area2D" groups=["items"]]
 script = ExtResource("1_lh0ja")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -22,4 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 3
 shape = SubResource("RectangleShape2D_ar2hn")
