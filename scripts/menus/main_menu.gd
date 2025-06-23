@@ -23,6 +23,9 @@ func _ready() -> void:
 
 	save_options()
 
+func _on_start_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://objects/scenes/main.tscn")
+
 func _on_options_btn_pressed() -> void:
 	current_menu = "options"
 

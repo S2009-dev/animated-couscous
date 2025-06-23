@@ -270,6 +270,7 @@ theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
 text = "BACK"
 
+[connection signal="pressed" from="MainContainer/Start/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MainContainer/Options/OptionsBtn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="MainContainer/Credits/CreditsBtn" to="." method="_on_credits_btn_pressed"]
 [connection signal="drag_ended" from="OptionsContainer/Volume/Slider" to="." method="_on_slider_drag_ended"]
