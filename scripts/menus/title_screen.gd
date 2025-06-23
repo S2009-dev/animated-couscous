@@ -28,13 +28,14 @@ func _on_credits_btn_pressed() -> void:
 
 	$Title.text = "CREDITS"
 	$MainContainer.hide()
+	$CreditsContainer.show()
 	$BackBtn.show()
 
 func _on_back_btn_pressed() -> void:
 	if current_menu == "options":
 		$OptionsContainer.hide()
 	elif current_menu == "credits":
-		pass
+		$CreditsContainer.hide()
 
 	current_menu = "main"
 
