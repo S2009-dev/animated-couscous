@@ -13,6 +13,7 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	player_name = "player" + str(id)
 	
+	name = player_name.capitalize()
 	label.text = player_name.capitalize()
 	label.modulate = [Color(1, 0, 0), Color(0, 0, 1)][id - 1]
 	sprite.texture = load("res://assets/sprites/players/" + player_name + ".png")
