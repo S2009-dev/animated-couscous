@@ -38,7 +38,7 @@ text = "ANIMATED-COUSCOUS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Container" type="Control" parent="."]
+[node name="MainContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,7 +52,7 @@ offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Control" parent="Container"]
+[node name="Start" type="Control" parent="MainContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +66,7 @@ offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartBtn" type="Button" parent="Container/Start"]
+[node name="StartBtn" type="Button" parent="MainContainer/Start"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,7 +83,7 @@ theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
 text = "START"
 
-[node name="Options" type="Control" parent="Container"]
+[node name="Options" type="Control" parent="MainContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,7 +97,7 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsBtn" type="Button" parent="Container/Options"]
+[node name="OptionsBtn" type="Button" parent="MainContainer/Options"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,7 +114,7 @@ theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
 text = "OPTIONS"
 
-[node name="Credits" type="Control" parent="Container"]
+[node name="Credits" type="Control" parent="MainContainer"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -128,7 +128,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsBtn" type="Button" parent="Container/Credits"]
+[node name="CreditsBtn" type="Button" parent="MainContainer/Credits"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -145,5 +145,5 @@ theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 
-[connection signal="pressed" from="Container/Options/OptionsBtn" to="." method="_on_options_btn_pressed"]
-[connection signal="pressed" from="Container/Credits/CreditsBtn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MainContainer/Options/OptionsBtn" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="MainContainer/Credits/CreditsBtn" to="." method="_on_credits_btn_pressed"]

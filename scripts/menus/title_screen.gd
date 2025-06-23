@@ -6,14 +6,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_options_btn_pressed() -> void:
-	pass # Replace with function body.
+	$Title.text = "OPTIONS"
 
 
 func _on_credits_btn_pressed() -> void:
-	pass # Replace with function body.
+	$Title.text = "CREDITS"
