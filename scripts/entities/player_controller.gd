@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 var screen_size: Vector2
 var player_name: String # Used for sprite loading and input actions
+var stored_item: Color
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -44,13 +45,20 @@ func _physics_process(_delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 func interact() -> void:
-	var items = get_tree().get_nodes_in_group("items")
+	if !stored_item:
+		var items = get_tree().get_nodes_in_group("items")
 
-	for i in range(0, items.size()):
-		var item = items[i]
-		var distance = position.distance_to(item.position)
+		for i in range(0, items.size()):
+			var item = items[i]
+			var distance = position.distance_to(item.position)
 
-		if distance < interaction_range:
-			item.queue_free()
-			get_tree().get_nodes_in_group("items_path")[i].queue_free()
-			break
+			if distance < interaction_range:
+				stored_item = item.get_node("ColorRect").modulate
+				item.queue_free()
+				get_tree().get_nodes_in_group("items_path")[i].queue_free()
+				break
+	else:
+		var bin = get_node("../../Bin")
+		if position.distance_to(bin.position) < interaction_range:
+			bin.get_node("ColorRect").modulate = stored_item
+			stored_item = Color()
