@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct3vxw048rndx"]
+[gd_scene load_steps=3 format=3 uid="uid://ct3vxw048rndx"]
 
 [ext_resource type="FontFile" uid="uid://bpwrnqg1uy3rl" path="res://assets/fonts/tile3x5.otf" id="1_7s4ta"]
+[ext_resource type="Script" uid="uid://cogjcwnimj4lg" path="res://scripts/menus/title_screen.gd" id="1_tx8d1"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tx8d1")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -142,3 +144,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
+
+[connection signal="pressed" from="Container/Options/OptionsBtn" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="Container/Credits/CreditsBtn" to="." method="_on_credits_btn_pressed"]
