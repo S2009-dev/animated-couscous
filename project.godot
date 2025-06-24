@@ -25,6 +25,7 @@ window/stretch/mode="canvas_items"
 
 items=""
 items_path=""
+bins=""
 
 [input]
 
