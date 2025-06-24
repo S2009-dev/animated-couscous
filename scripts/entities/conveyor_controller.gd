@@ -7,29 +7,41 @@ extends TileMapLayer
 @onready var items: Node2D = %Items
 
 func _process(delta: float) -> void:
-	for i in range(items.get_child_count()):
-		var item = items.get_child(i)
-		var path_follow = paths.get_child(i)
+	for item in items.get_children():
+		var id = item.name.get_slice("_", 1)
+		var path_follow = paths.get_node("PathFollow_" + str(id))
 
 		path_follow.progress_ratio += delta * speed / 100
 		item.position = path_follow.position
 
 		if path_follow.progress_ratio >= 1:
-			item.queue_free()
-			path_follow.queue_free()
+			await item.remove()
 
 
 func _on_item_spawn_interval_timeout() -> void:
 	var item = item_object.instantiate()
 	var path_follow = PathFollow2D.new()
-	var id = items.get_child_count() + 1
+	var id = generate_uuid()
 	
-	item.name = "Item" + str(id)
+	item.name = "Item_" + str(id)
 	item.position = path_follow.position
 
-	path_follow.name = "PathFollow" + str(id)
+	path_follow.name = "PathFollow_" + str(id)
 	path_follow.loop = false
 	path_follow.add_to_group("items_path")
 
 	items.add_child(item)
 	paths.add_child(path_follow)
+
+func generate_uuid() -> String:
+	var characters = "0123456789abcdef"
+	var uuid = ""
+
+	for i in range(36):
+		if i == 8 or i == 13 or i == 18 or i == 23:
+			uuid += "-"
+		else:
+			var random_index = randi() % characters.length()
+			uuid += characters[random_index]
+
+	return uuid
