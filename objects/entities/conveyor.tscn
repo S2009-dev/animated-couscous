@@ -58,9 +58,11 @@ item_object = ExtResource("3_r0h6a")
 metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
+unique_name_in_owner = true
 curve = SubResource("Curve2D_dhl20")
 
 [node name="Items" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="ItemSpawnInterval" type="Timer" parent="."]
 autostart = true
