@@ -7,9 +7,10 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var label: Label = %Label
 
+var stored_item: Node2D = null
+
 var screen_size: Vector2
 var player_name: String # Used for sprite loading and input actions
-var stored_item: Color
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -53,12 +54,11 @@ func interact() -> void:
 			var distance = position.distance_to(item.position)
 
 			if distance < interaction_range:
-				stored_item = item.get_node("ColorRect").modulate
-				item.queue_free()
-				get_tree().get_nodes_in_group("items_path")[i].queue_free()
+				stored_item = item
+				item.remove()
 				break
 	else:
 		var bin = get_node("../../Bin")
 		if position.distance_to(bin.position) < interaction_range:
-			bin.get_node("ColorRect").modulate = stored_item
-			stored_item = Color()
+			bin.get_node("ColorRect").modulate = stored_item.get_node("ColorRect").modulate
+			stored_item = null
