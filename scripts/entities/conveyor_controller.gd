@@ -24,6 +24,7 @@ func _on_item_spawn_interval_timeout() -> void:
 	var id = generate_uuid()
 	
 	item.name = "Item_" + str(id)
+	item.type = randi() % 3
 	item.position = path_follow.position
 
 	path_follow.name = "PathFollow_" + str(id)
