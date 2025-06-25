@@ -20,7 +20,7 @@ func _ready() -> void:
 func _on_start_btn_pressed() -> void:
 	click.emit()
 	start_game.emit()
-	get_tree().change_scene_to_file("res://objects/scenes/main.tscn")
+	get_tree().change_scene_to_file("res://objects/scenes/world.tscn")
 
 func _on_options_btn_pressed() -> void:
 	click.emit()
