@@ -254,4 +254,6 @@ theme_override_fonts/font = ExtResource("7_w61o3")
 theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
+[connection signal="store_item" from="." to="HUD" method="_on_store_item"]
+[connection signal="update_score" from="." to="HUD" method="_on_update_score"]
 [connection signal="world_loaded" from="." to="Cameras" method="_on_main_world_loaded"]
