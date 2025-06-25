@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6khkw216qi8f"]
 
-[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/main.gd" id="1_l21g3"]
-[ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_vn3je"]
-[ext_resource type="PackedScene" uid="uid://dhqxr0whi4kf2" path="res://objects/entities/conveyor.tscn" id="3_vn3je"]
-[ext_resource type="Script" uid="uid://dqrlsqsc233yg" path="res://scripts/scenes/camera_controller.gd" id="4_1mux5"]
-[ext_resource type="Shader" uid="uid://dwq7aopgdg2ss" path="res://assets/shaders/split_screen.gdshader" id="5_71dq4"]
-[ext_resource type="PackedScene" uid="uid://bepv0pf4m1sxm" path="res://objects/entities/bin.tscn" id="5_r7cts"]
-[ext_resource type="Texture2D" uid="uid://d0fx0xonytd07" path="res://icon.svg" id="6_oll44"]
+[ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/world.gd" id="1_w61o3"]
+[ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_1k1mb"]
+[ext_resource type="Script" uid="uid://dqrlsqsc233yg" path="res://scripts/scenes/camera_controller.gd" id="3_odjkc"]
+[ext_resource type="PackedScene" uid="uid://dhqxr0whi4kf2" path="res://objects/entities/conveyor.tscn" id="4_r2s56"]
+[ext_resource type="PackedScene" uid="uid://bepv0pf4m1sxm" path="res://objects/entities/bin.tscn" id="5_brmet"]
+[ext_resource type="Shader" uid="uid://dwq7aopgdg2ss" path="res://assets/shaders/split_screen.gdshader" id="6_smx02"]
+[ext_resource type="Texture2D" uid="uid://d0fx0xonytd07" path="res://icon.svg" id="7_6hy1k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oll44"]
-shader = ExtResource("5_71dq4")
+shader = ExtResource("6_smx02")
 shader_parameter/viewport_size = Vector2(960, 540)
 shader_parameter/split_active = false
 shader_parameter/player1_position = Vector2(0, 0)
@@ -17,9 +17,9 @@ shader_parameter/player2_position = Vector2(0, 0)
 shader_parameter/split_line_thickness = 0.0
 shader_parameter/split_line_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_l21g3")
-player_object = ExtResource("2_vn3je")
+[node name="World" type="Node2D"]
+script = ExtResource("1_w61o3")
+player_object = ExtResource("2_1k1mb")
 
 [node name="Cameras" type="Control" parent="."]
 layout_mode = 3
@@ -30,7 +30,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_1mux5")
+script = ExtResource("3_odjkc")
 max_separation = 540.0
 
 [node name="ViewportContainer1" type="SubViewportContainer" parent="Cameras"]
@@ -47,16 +47,16 @@ render_target_update_mode = 4
 
 [node name="Camera1" type="Camera2D" parent="Cameras/ViewportContainer1/Viewport1"]
 
-[node name="Conveyor" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("3_vn3je")]
+[node name="Conveyor" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("4_r2s56")]
 
-[node name="Bin" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_r7cts")]
+[node name="Bin" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_brmet")]
 position = Vector2(100, 100)
 
-[node name="Bin2" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_r7cts")]
+[node name="Bin2" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_brmet")]
 position = Vector2(200, 200)
 type = 1
 
-[node name="Bin3" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_r7cts")]
+[node name="Bin3" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("5_brmet")]
 position = Vector2(300, 300)
 type = 2
 
@@ -82,7 +82,7 @@ material = SubResource("ShaderMaterial_oll44")
 layout_mode = 0
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("6_oll44")
+texture = ExtResource("7_6hy1k")
 expand_mode = 1
 
 [connection signal="world_loaded" from="." to="Cameras" method="_on_main_world_loaded"]
