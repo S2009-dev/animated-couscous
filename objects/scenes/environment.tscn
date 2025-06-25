@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://trc81l4ky27a"]
+
+[ext_resource type="PackedScene" uid="uid://dhqxr0whi4kf2" path="res://objects/entities/conveyor.tscn" id="1_m5002"]
+[ext_resource type="PackedScene" uid="uid://bepv0pf4m1sxm" path="res://objects/entities/bin.tscn" id="2_1887j"]
+
+[node name="Environment" type="Node2D"]
+
+[node name="Conveyor" parent="." instance=ExtResource("1_m5002")]
+
+[node name="Bin" parent="." instance=ExtResource("2_1887j")]
+position = Vector2(100, 100)
+
+[node name="Bin2" parent="." instance=ExtResource("2_1887j")]
+position = Vector2(200, 200)
+type = 1
+
+[node name="Bin3" parent="." instance=ExtResource("2_1887j")]
+position = Vector2(300, 300)
+type = 2
