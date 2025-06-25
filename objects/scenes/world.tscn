@@ -18,7 +18,7 @@ shader_parameter/split_line_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_w61o3")
-player_object = ExtResource("2_1k1mb")
+player_scene = ExtResource("2_1k1mb")
 
 [node name="Cameras" type="Control" parent="."]
 layout_mode = 3

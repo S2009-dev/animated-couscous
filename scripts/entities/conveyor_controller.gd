@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-@export var item_object: PackedScene # Items scene
+@export var item_scene: PackedScene # Items scene
 @export var speed: int = 8
 
 @onready var paths: Path2D = %Path2D
@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _on_item_spawn_interval_timeout() -> void:
-	var item = item_object.instantiate()
+	var item = item_scene.instantiate()
 	var path_follow = PathFollow2D.new()
 	var id = generate_uuid()
 	
