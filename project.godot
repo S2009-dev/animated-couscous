@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="animated-couscous"
-run/main_scene="uid://b6khkw216qi8f"
+run/main_scene="uid://ct3vxw048rndx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://scripts/scenes/audio_manager.gd"
 
 [display]
 
