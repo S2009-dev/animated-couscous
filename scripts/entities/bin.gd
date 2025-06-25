@@ -10,3 +10,5 @@ func _ready() -> void:
 func throw_item(item: Color) -> void:
 	if item == $ColorRect.modulate:
 		get_node("/root/World").emit_signal("update_score")
+	else:
+		get_node("/root/World").emit_signal("update_errors")

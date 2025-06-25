@@ -1,5 +1,7 @@
 extends Control
 
+@export var max_errors: int = 10
+
 @onready var player1_item: ColorRect = %Player1Item
 @onready var player2_item: ColorRect = %Player2Item
 @onready var best_score_label: Label = %BestScore
@@ -41,3 +43,21 @@ func update_best_score() -> void:
 	
 	config.set_value("scores", "best_score", best_score)
 	config.save("user://scores.cfg")
+
+func _on_update_errors() -> void:
+	errors += 1
+	errors_label.text = "ERRORS: " + str(errors) + "/10"
+
+	if errors >= max_errors:
+		get_tree().paused = true
+		game_over.show()
+
+
+func _on_retry_btn_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://objects/scenes/world.tscn")
+
+
+func _on_quit_btn_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://objects/menus/main_menu.tscn")

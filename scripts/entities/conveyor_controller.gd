@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 		item.position = path_follow.position
 
 		if path_follow.progress_ratio >= 1:
+			get_node("/root/World").emit_signal("update_errors")
 			await item.remove()
 
 

@@ -2,6 +2,7 @@ extends Node2D
 
 signal world_loaded
 signal update_score
+signal update_errors
 signal store_item(player_id: int, item: Color)
 
 @export var player_scene: PackedScene
