@@ -49,39 +49,217 @@ offset_bottom = 210.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CreditsContainer"]
+[node name="Section 1" type="Label" parent="CreditsContainer"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 41.0
-offset_top = -33.5
-offset_right = 701.0
-offset_bottom = 33.5
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -330.0
+offset_right = 330.0
+offset_bottom = 67.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4tw7l")
 theme_override_font_sizes/font_size = 48
-text = "This game was developed by"
+text = "DEVELOPMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LinkButton" type="LinkButton" parent="CreditsContainer"]
+[node name="S2009" type="LinkButton" parent="CreditsContainer/Section 1"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = -33.5
-offset_right = -110.0
-offset_bottom = 33.5
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.5
+offset_top = -19.0
+offset_right = 45.5
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
 text = "S2009"
 uri = "https://s2009.fr"
+
+[node name="Section 2" type="Label" parent="CreditsContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -96.0
+offset_right = 256.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4tw7l")
+theme_override_font_sizes/font_size = 48
+text = "REVIEW"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CruuzAzul" type="LinkButton" parent="CreditsContainer/Section 2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -19.0
+offset_right = 156.0
+offset_bottom = 26.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "CruuzAzul"
+uri = "https://github.com/CruuzAzul"
+
+[node name="Tyraael" type="LinkButton" parent="CreditsContainer/Section 2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -19.0
+offset_right = 57.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Tyraael"
+uri = "https://github.com/AntMarq"
+
+[node name="PopsIDX" type="LinkButton" parent="CreditsContainer/Section 2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -19.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "PopsIDX "
+uri = "https://github.com/PopsIDX"
+
+[node name="Section 3" type="Label" parent="CreditsContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4tw7l")
+theme_override_font_sizes/font_size = 48
+text = "MUSICS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DELOSound" type="LinkButton" parent="CreditsContainer/Section 3"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -19.0
+offset_right = 156.0
+offset_bottom = 26.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "DELOSound"
+uri = "https://pixabay.com/music/beats-lofi-chill-315216/"
+
+[node name="Musinova" type="LinkButton" parent="CreditsContainer/Section 3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -19.0
+offset_bottom = 26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Musinova"
+uri = "https://pixabay.com/music/corporate-ambient-electronic-background-explainer-364260/"
+
+[node name="Section 4" type="Label" parent="CreditsContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -330.0
+offset_top = -96.0
+offset_right = 330.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4tw7l")
+theme_override_font_sizes/font_size = 48
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="u_u4pf5h7zip" type="LinkButton" parent="CreditsContainer/Section 4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.5
+offset_top = -19.0
+offset_right = 45.5
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.882353, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.733333, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "u_u4pf5h7zip"
+uri = "https://pixabay.com/sound-effects/click-345983/"
 
 [node name="BackBtn" type="Button" parent="."]
 layout_mode = 1
