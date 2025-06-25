@@ -5,9 +5,11 @@ extends Control
 @onready var best_score_label: Label = %BestScore
 @onready var score_label: Label = %Score
 @onready var game_over: Control = %GameOver
+@onready var errors_label: Label = %Errors
 
 var score: int = 0
 var best_score: int = 0
+var errors: int = 0
 var config: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:

@@ -254,6 +254,23 @@ theme_override_fonts/font = ExtResource("7_w61o3")
 theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
+[node name="Errors" type="Label" parent="HUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_w61o3")
+theme_override_font_sizes/font_size = 32
+text = "ERRORS: 0/10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="store_item" from="." to="HUD" method="_on_store_item"]
 [connection signal="update_score" from="." to="HUD" method="_on_update_score"]
 [connection signal="world_loaded" from="." to="Cameras" method="_on_main_world_loaded"]
