@@ -65,6 +65,6 @@ curve = SubResource("Curve2D_dhl20")
 unique_name_in_owner = true
 
 [node name="ItemSpawnInterval" type="Timer" parent="."]
-autostart = true
+unique_name_in_owner = true
 
 [connection signal="timeout" from="ItemSpawnInterval" to="." method="_on_item_spawn_interval_timeout"]

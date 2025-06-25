@@ -2,9 +2,15 @@ extends TileMapLayer
 
 @export var item_scene: PackedScene # Items scene
 @export var speed: int = 8
+@export var item_spawn_interval: float = 1.0
 
 @onready var paths: Path2D = %Path2D
 @onready var items: Node2D = %Items
+@onready var timer: Timer = %ItemSpawnInterval
+
+func _ready() -> void:
+	timer.wait_time = item_spawn_interval
+	timer.start()
 
 func _process(delta: float) -> void:
 	for item in items.get_children():
