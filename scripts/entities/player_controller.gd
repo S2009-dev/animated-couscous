@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 @export_range(1, 2) var id: int = 1 # ID (only 1 or 2)
 @export var speed: float = 400 # Walking Speed (px/s)
-@export var interaction_range: float = 64 # Range of interaction (px)
 
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var label: Label = %Label
+@onready var interaction_range: Area2D = %InteractionRange
 
 var screen_size: Vector2
 var player_name: String # Used for sprite loading and input actions
+var collision_body: Area2D
+var stored_item: Color
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -44,13 +46,18 @@ func _physics_process(_delta: float) -> void:
 	position = position.clamp(Vector2.ZERO, screen_size)
 
 func interact() -> void:
-	var items = get_tree().get_nodes_in_group("items")
+	if !stored_item:
+		if collision_body and collision_body.is_in_group("items"):
+			stored_item = collision_body.get_node("ColorRect").modulate
+			collision_body.remove()
+	else:
+		if collision_body and collision_body.is_in_group("bins"):
+			collision_body.throw_item(stored_item)
+			stored_item = Color()
 
-	for i in range(0, items.size()):
-		var item = items[i]
-		var distance = position.distance_to(item.position)
+# The area is checking only for layer 2, used for items and bin
+func _on_interaction_range_area_entered(area: Area2D) -> void:
+	collision_body = area
 
-		if distance < interaction_range:
-			item.queue_free()
-			get_tree().get_nodes_in_group("items_path")[i].queue_free()
-			break
+func _on_interaction_range_area_exited(_area: Area2D) -> void:
+	collision_body = null

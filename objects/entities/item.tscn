@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3u8fsnyvm5r2"]
 
-[ext_resource type="Script" path="res://scripts/entities/item.gd" id="1_lh0ja"]
+[ext_resource type="Script" uid="uid://hrohb5cgxbju" path="res://scripts/entities/item.gd" id="1_lh0ja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ar2hn"]
 size = Vector2(16, 16)
 
 [node name="Item" type="Area2D" groups=["items"]]
+collision_layer = 2
 script = ExtResource("1_lh0ja")
 
 [node name="ColorRect" type="ColorRect" parent="."]
