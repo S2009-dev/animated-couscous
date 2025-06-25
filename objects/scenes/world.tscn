@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6khkw216qi8f"]
+[gd_scene load_steps=10 format=3 uid="uid://b6khkw216qi8f"]
 
 [ext_resource type="Script" uid="uid://c1rrds461xdgh" path="res://scripts/scenes/world.gd" id="1_w61o3"]
 [ext_resource type="PackedScene" uid="uid://yi03qgjo3ayc" path="res://objects/entities/player.tscn" id="2_1k1mb"]
 [ext_resource type="Script" uid="uid://dqrlsqsc233yg" path="res://scripts/scenes/camera_controller.gd" id="3_odjkc"]
 [ext_resource type="PackedScene" uid="uid://trc81l4ky27a" path="res://objects/scenes/environment.tscn" id="4_oll44"]
 [ext_resource type="Shader" uid="uid://dwq7aopgdg2ss" path="res://assets/shaders/split_screen.gdshader" id="6_smx02"]
+[ext_resource type="Script" uid="uid://dieupttefupbx" path="res://scripts/scenes/hud_manager.gd" id="7_1k1mb"]
 [ext_resource type="Texture2D" uid="uid://d0fx0xonytd07" path="res://icon.svg" id="7_6hy1k"]
 [ext_resource type="FontFile" uid="uid://bpwrnqg1uy3rl" path="res://assets/fonts/tile3x5.otf" id="7_w61o3"]
 
@@ -83,6 +84,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_1k1mb")
 
 [node name="StoredItems" type="Control" parent="HUD"]
 anchors_preset = 0
@@ -103,6 +105,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player1Item" type="ColorRect" parent="HUD/StoredItems/Player1"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -128,6 +131,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Player2Item" type="ColorRect" parent="HUD/StoredItems/Player2"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -153,6 +157,7 @@ offset_bottom = 72.0
 grow_horizontal = 0
 
 [node name="BestScore" type="Label" parent="HUD/Scores"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -172,6 +177,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="HUD/Scores"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -188,6 +194,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameOver" type="Control" parent="HUD"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
