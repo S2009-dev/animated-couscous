@@ -43,7 +43,6 @@ func _physics_process(_delta: float) -> void:
 		sprite.rotation = atan2(velocity.y, velocity.x) + 90 * PI / 180
 	
 	move_and_slide()
-	position = position.clamp(Vector2.ZERO, screen_size)
 
 func interact() -> void:
 	if !stored_item:
