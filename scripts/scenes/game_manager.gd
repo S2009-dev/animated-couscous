@@ -2,7 +2,6 @@ extends Node
 
 signal update_score
 signal update_errors
-signal store_item(player_id: int, item: Color)
 
 var music_player  = AudioStreamPlayer.new()
 var sfx_player = AudioStreamPlayer.new()
@@ -48,6 +47,3 @@ func _update_score():
 
 func _update_errors():
 	update_errors.emit()
-
-func _store_item(player_id: int, item: Color):
-	store_item.emit(player_id, item)

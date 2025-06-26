@@ -1,7 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct3vxw048rndx"]
+[gd_scene load_steps=9 format=3 uid="uid://ct3vxw048rndx"]
 
 [ext_resource type="FontFile" uid="uid://bpwrnqg1uy3rl" path="res://assets/fonts/tile3x5.otf" id="1_7s4ta"]
 [ext_resource type="Script" uid="uid://cogjcwnimj4lg" path="res://scripts/menus/main_menu.gd" id="1_tx8d1"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_tr461"]
+button_index = 6
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_jtikk"]
+events = [SubResource("InputEventJoypadButton_tr461")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_lnxtf"]
+button_index = 4
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_nd64n"]
+events = [SubResource("InputEventJoypadButton_lnxtf")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_8wyt0"]
+button_index = 5
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_cbu16"]
+events = [SubResource("InputEventJoypadButton_8wyt0")]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -81,6 +102,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_jtikk")
+shortcut_in_tooltip = false
 text = "START"
 
 [node name="Options" type="Control" parent="Container"]
@@ -112,6 +135,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_nd64n")
+shortcut_in_tooltip = false
 text = "OPTIONS"
 
 [node name="Credits" type="Control" parent="Container"]
@@ -143,6 +168,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_7s4ta")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_cbu16")
+shortcut_in_tooltip = false
 text = "CREDITS"
 
 [connection signal="pressed" from="Container/Start/StartBtn" to="." method="_on_start_btn_pressed"]

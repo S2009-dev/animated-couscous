@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://df50jna1nt764"]
+[gd_scene load_steps=5 format=3 uid="uid://df50jna1nt764"]
 
 [ext_resource type="Script" uid="uid://dc1f4760nrrom" path="res://scripts/menus/credits_menu.gd" id="1_oec4l"]
 [ext_resource type="FontFile" uid="uid://bpwrnqg1uy3rl" path="res://assets/fonts/tile3x5.otf" id="2_4tw7l"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_oec4l"]
+button_index = 4
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_4tw7l"]
+events = [SubResource("InputEventJoypadButton_oec4l")]
 
 [node name="Credits Menu" type="Control"]
 layout_mode = 3
@@ -276,6 +283,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_4tw7l")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_4tw7l")
+shortcut_in_tooltip = false
 text = "BACK"
 
 [connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]

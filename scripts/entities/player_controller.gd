@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var label: Label = %Label
+@onready var item_rect: ColorRect = %ColorRect
 @onready var interaction_range: Area2D = %InteractionRange
 
 var screen_size: Vector2
@@ -19,6 +20,7 @@ func _ready() -> void:
 	name = player_name.capitalize()
 	label.text = player_name.capitalize()
 	label.modulate = [Color(1, 0, 0), Color(0, 0, 1)][id - 1]
+	item_rect.modulate = Color(1, 1, 1, 1)
 	sprite.texture = load("res://assets/sprites/players/" + player_name + ".png")
 
 func _process(_delta: float) -> void:
@@ -48,17 +50,17 @@ func interact() -> void:
 	if !stored_item:
 		if collision_body and collision_body.is_in_group("items"):
 			stored_item = collision_body.get_node("ColorRect").modulate
+			item_rect.modulate = stored_item
 			collision_body.remove()
 
 			GameManager._click()
-			GameManager.emit_signal("store_item", id, stored_item)
 	else:
 		if collision_body and collision_body.is_in_group("bins"):
 			collision_body.throw_item(stored_item)
+			item_rect.modulate = Color(1, 1, 1, 1)
 			stored_item = Color()
 
 			GameManager._click()
-			GameManager.emit_signal("store_item", id, Color(1, 1, 1, 1))
 
 # The area is checking only for layer 2, used for items and bin
 func _on_interaction_range_area_entered(area: Area2D) -> void:
