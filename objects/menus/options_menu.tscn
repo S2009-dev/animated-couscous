@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmk32r6qe0ebl"]
+[gd_scene load_steps=5 format=3 uid="uid://cmk32r6qe0ebl"]
 
 [ext_resource type="FontFile" uid="uid://bpwrnqg1uy3rl" path="res://assets/fonts/tile3x5.otf" id="1_km45j"]
 [ext_resource type="Script" uid="uid://dlhb7an8vy2bq" path="res://scripts/menus/options_menu.gd" id="1_ns2lj"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ns2lj"]
+button_index = 4
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_x3kfj"]
+events = [SubResource("InputEventJoypadButton_ns2lj")]
 
 [node name="Options Menu" type="Control"]
 layout_mode = 3
@@ -93,6 +100,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_km45j")
 theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_x3kfj")
+shortcut_in_tooltip = false
 text = "BACK"
 
 [connection signal="drag_ended" from="Volume/Slider" to="." method="_on_slider_drag_ended"]

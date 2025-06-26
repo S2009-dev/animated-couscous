@@ -2,8 +2,6 @@ extends Control
 
 @export var max_errors: int = 10
 
-@onready var player1_item: ColorRect = %Player1Item
-@onready var player2_item: ColorRect = %Player2Item
 @onready var best_score_label: Label = %BestScore
 @onready var score_label: Label = %Score
 @onready var game_over: Control = %GameOver
@@ -17,7 +15,6 @@ var config: ConfigFile = ConfigFile.new()
 func _ready() -> void:
 	var conf_load = config.load("user://scores.cfg")
 
-	GameManager.connect("store_item", self._on_store_item)
 	GameManager.connect("update_score", self._on_update_score)
 	GameManager.connect("update_errors", self._on_update_errors)
 
@@ -27,12 +24,6 @@ func _ready() -> void:
 
 	config.set_value("scores", "best_score", best_score)
 	config.save("user://best_score.cfg")
-
-func _on_store_item(player_id: int, item: Color) -> void:
-	if player_id == 1:
-		player1_item.modulate = item
-	elif player_id == 2:
-		player2_item.modulate = item
 
 func _on_update_score() -> void:
 	score += 1
@@ -58,10 +49,14 @@ func _on_update_errors() -> void:
 
 
 func _on_retry_btn_pressed() -> void:
+	GameManager._click()
+	GameManager._start_game()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://objects/scenes/world.tscn")
 
 
 func _on_quit_btn_pressed() -> void:
+	GameManager._click()
+	GameManager._main()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://objects/menus/main_menu.tscn")
