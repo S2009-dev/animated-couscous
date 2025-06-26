@@ -1,8 +1,5 @@
 extends Control
 
-signal start_game
-signal click
-
 var config: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:
@@ -18,14 +15,14 @@ func _ready() -> void:
 	config.save("user://options.cfg")
 
 func _on_start_btn_pressed() -> void:
-	click.emit()
-	start_game.emit()
+	GameManager.emit_signal("click")
+	GameManager.emit_signal("start_game")
 	get_tree().change_scene_to_file("res://objects/scenes/world.tscn")
 
 func _on_options_btn_pressed() -> void:
-	click.emit()
+	GameManager.emit_signal("click")
 	get_tree().change_scene_to_file("res://objects/menus/options_menu.tscn")
 
 func _on_credits_btn_pressed() -> void:
-	click.emit()
+	GameManager.emit_signal("click")
 	get_tree().change_scene_to_file("res://objects/menus/credits_menu.tscn")

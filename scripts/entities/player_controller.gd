@@ -49,10 +49,14 @@ func interact() -> void:
 		if collision_body and collision_body.is_in_group("items"):
 			stored_item = collision_body.get_node("ColorRect").modulate
 			collision_body.remove()
+
+			GameManager.emit_signal("store_item", id, stored_item)
 	else:
 		if collision_body and collision_body.is_in_group("bins"):
 			collision_body.throw_item(stored_item)
 			stored_item = Color()
+
+			GameManager.emit_signal("store_item", id, Color(1, 1, 1, 1))
 
 # The area is checking only for layer 2, used for items and bin
 func _on_interaction_range_area_entered(area: Area2D) -> void:
