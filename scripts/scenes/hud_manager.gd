@@ -58,10 +58,14 @@ func _on_update_errors() -> void:
 
 
 func _on_retry_btn_pressed() -> void:
+	GameManager._click()
+	GameManager._start_game()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://objects/scenes/world.tscn")
 
 
 func _on_quit_btn_pressed() -> void:
+	GameManager._click()
+	GameManager._main()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://objects/menus/main_menu.tscn")

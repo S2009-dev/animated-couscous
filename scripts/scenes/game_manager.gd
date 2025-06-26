@@ -8,10 +8,15 @@ var music_player  = AudioStreamPlayer.new()
 var sfx_player = AudioStreamPlayer.new()
 
 func _ready():
+	music_player.name = "Music"
+
 	add_child(music_player)
 	add_child(sfx_player)
+	_main()
 
-	music_player.name = "Music"
+func _main() -> void:
+	music_player.stop()
+
 	music_player.stream = load("res://assets/musics/main_menu.mp3")
 	music_player.stream.loop = true
 
