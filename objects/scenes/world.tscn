@@ -32,7 +32,7 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_odjkc")
-max_separation = 540.0
+max_separation = 384.0
 
 [node name="ViewportContainer1" type="SubViewportContainer" parent="Cameras"]
 layout_mode = 0
@@ -47,6 +47,10 @@ size = Vector2i(960, 540)
 render_target_update_mode = 4
 
 [node name="Camera1" type="Camera2D" parent="Cameras/ViewportContainer1/Viewport1"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
 
 [node name="Environment" parent="Cameras/ViewportContainer1/Viewport1" instance=ExtResource("4_oll44")]
 
@@ -66,6 +70,11 @@ size = Vector2i(960, 540)
 render_target_update_mode = 4
 
 [node name="Camera2" type="Camera2D" parent="Cameras/ViewportContainer2/Viewport2"]
+position = Vector2(6, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
 
 [node name="View" type="TextureRect" parent="Cameras"]
 material = SubResource("ShaderMaterial_oll44")

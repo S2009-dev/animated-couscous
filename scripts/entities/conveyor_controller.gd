@@ -12,6 +12,8 @@ func _ready() -> void:
 	timer.wait_time = item_spawn_interval
 	timer.start()
 
+	_on_item_spawn_interval_timeout()
+
 func _process(delta: float) -> void:
 	for item in items.get_children():
 		var id = item.name.get_slice("_", 1)
