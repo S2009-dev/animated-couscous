@@ -17,6 +17,10 @@ var config: ConfigFile = ConfigFile.new()
 func _ready() -> void:
 	var conf_load = config.load("user://scores.cfg")
 
+	GameManager.connect("store_item", self._on_store_item)
+	GameManager.connect("update_score", self._on_update_score)
+	GameManager.connect("update_errors", self._on_update_errors)
+
 	if conf_load == OK and config.has_section_key("scores", "best_score"):
 		best_score = config.get_value("scores", "best_score")
 		best_score_label.text = "BEST SCORE: " + str(best_score)

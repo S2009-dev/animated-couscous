@@ -120,6 +120,7 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Player2" type="Label" parent="HUD/StoredItems"]
+layout_mode = 0
 offset_top = 40.0
 offset_right = 238.0
 offset_bottom = 73.0
@@ -195,6 +196,7 @@ vertical_alignment = 1
 
 [node name="GameOver" type="Control" parent="HUD"]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -227,7 +229,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RetryBtn" type="Button" parent="HUD/GameOver"]
-process_mode = 2
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -242,7 +243,6 @@ theme_override_font_sizes/font_size = 32
 text = "TRY AGAIN"
 
 [node name="QuitBtn" type="Button" parent="HUD/GameOver"]
-process_mode = 2
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -273,9 +273,6 @@ text = "ERRORS: 0/10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="store_item" from="." to="HUD" method="_on_store_item"]
-[connection signal="update_errors" from="." to="HUD" method="_on_update_errors"]
-[connection signal="update_score" from="." to="HUD" method="_on_update_score"]
-[connection signal="world_loaded" from="." to="Cameras" method="_on_main_world_loaded"]
+[connection signal="world_loaded" from="." to="Cameras" method="_on_world_loaded"]
 [connection signal="pressed" from="HUD/GameOver/RetryBtn" to="HUD" method="_on_retry_btn_pressed"]
 [connection signal="pressed" from="HUD/GameOver/QuitBtn" to="HUD" method="_on_quit_btn_pressed"]
