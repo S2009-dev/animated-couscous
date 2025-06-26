@@ -1,7 +1,5 @@
 extends Node
 
-signal click
-signal start_game
 signal update_score
 signal update_errors
 signal store_item(player_id: int, item: Color)
@@ -19,7 +17,7 @@ func _ready():
 
 	music_player.play()
 
-func _on_start_game():
+func _start_game():
 	music_player.stop()
 
 	music_player.stream = load("res://assets/musics/game.mp3")
@@ -27,9 +25,18 @@ func _on_start_game():
 
 	music_player.play()
 
-func _on_click():
+func _click():
 	sfx_player.stop()
 
 	sfx_player.stream = load("res://assets/SFX/click.mp3")
 
 	sfx_player.play()
+
+func _update_score():
+	update_score.emit()
+
+func _update_errors():
+	update_errors.emit()
+
+func _store_item(player_id: int, item: Color):
+	store_item.emit(player_id, item)
